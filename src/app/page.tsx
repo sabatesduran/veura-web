@@ -156,39 +156,41 @@ function Hero() {
           </div>
 
           {/* secondary supporting visual (WhatsApp import) */}
-          <div className="pointer-events-none absolute -left-6 top-8 hidden w-[240px] -rotate-6 md:block">
+          <div className="pointer-events-none absolute -left-10 top-6 hidden w-[300px] -rotate-6 md:block">
             <div className="mx-auto w-full">
               <Iphone17Pro
                 src="/screens/share-extension.jpg"
-                className="h-[360px] w-full text-zinc-950 drop-shadow-[0_20px_55px_rgba(0,0,0,0.18)]"
+                className="h-[440px] w-full text-zinc-950 drop-shadow-[0_26px_70px_rgba(0,0,0,0.18)]"
               />
             </div>
+          </div>
 
-            {/* doodle arrow + label */}
-            <div className="absolute -left-24 top-24 rotate-[8deg]">
-              <div className="relative">
-                <svg width="140" height="120" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M10 95 C 40 55, 65 45, 95 35 C 112 29, 125 24, 132 14"
-                    stroke="rgba(17,24,39,0.65)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeDasharray="1 10"
-                  />
-                  <path
-                    d="M120 18 L134 12 L128 26"
-                    stroke="rgba(17,24,39,0.65)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <div className="absolute left-0 top-[70px] -rotate-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-zinc-900 ring-1 ring-black/10 shadow-sm">
-                  Import from WhatsApp
-                </div>
-              </div>
-            </div>
+          {/* doodle arrow from the WhatsApp badge to the screenshot */}
+          <div className="pointer-events-none absolute left-0 top-0 hidden md:block">
+            <svg
+              width="520"
+              height="220"
+              viewBox="0 0 520 220"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute left-[-40px] top-[10px]"
+            >
+              <path
+                d="M95 55 C 150 60, 175 78, 210 88 C 260 103, 320 90, 360 80 C 405 68, 448 55, 480 35"
+                stroke="rgba(17,24,39,0.55)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray="1 10"
+              />
+              <path
+                d="M468 40 L486 33 L478 50"
+                stroke="rgba(17,24,39,0.55)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
         </div>
       </div>
