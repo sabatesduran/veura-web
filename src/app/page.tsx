@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { ArrowRight, Lock, Mic, Share2, Sparkles, Zap } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +15,7 @@ export default function Home() {
     <main className="min-h-dvh bg-background text-foreground">
       <SiteHeader />
       <Hero />
+      <Screenshots />
       <LogosStrip />
       <Features />
       <HowItWorks />
@@ -168,6 +171,58 @@ function MiniAction({ label }: { label: string }) {
     <div className="rounded-xl border bg-background/60 px-3 py-2 text-center text-xs font-medium text-muted-foreground">
       {label}
     </div>
+  );
+}
+
+function Screenshots() {
+  const shots = [
+    {
+      src: "/screens/record.jpg",
+      alt: "Veura recording screen",
+      label: "Quick Dictation",
+    },
+    {
+      src: "/screens/share-extension.jpg",
+      alt: "Veura share extension importing a voice note",
+      label: "Import from WhatsApp",
+    },
+    {
+      src: "/screens/transcription-blurred.jpg",
+      alt: "Veura transcription output screen",
+      label: "Plain text output",
+    },
+    {
+      src: "/screens/settings.jpg",
+      alt: "Veura settings showing downloadable Whisper models",
+      label: "On-device models",
+    },
+  ];
+
+  return (
+    <section className="mx-auto max-w-6xl px-4 pb-4 md:pb-10">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        {shots.map((shot) => (
+          <Card key={shot.src} className="overflow-hidden">
+            <div className="border-b bg-muted/20 px-3 py-2 text-xs font-medium text-muted-foreground">
+              {shot.label}
+            </div>
+            <div className="relative aspect-[9/19.5] w-full">
+              <Image
+                src={shot.src}
+                alt={shot.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 25vw, 50vw"
+                priority={shot.src === "/screens/record.jpg"}
+              />
+            </div>
+          </Card>
+        ))}
+      </div>
+      <p className="mt-3 text-xs text-muted-foreground">
+        Real screenshots. Transcript content blurred for privacy.
+      </p>
+    </section>
   );
 }
 
