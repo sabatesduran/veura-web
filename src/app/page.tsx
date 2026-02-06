@@ -80,7 +80,24 @@ function Hero() {
 
       <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
         <header className="flex flex-col items-center text-center">
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex items-center gap-4">
+            <div className="relative size-16 overflow-hidden rounded-[18px] border border-black/10 bg-white shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+              <Image
+                src="/brand/app-icon.png"
+                alt="Veura"
+                fill
+                className="object-cover"
+                sizes="64px"
+                priority
+              />
+            </div>
+            <div className="text-left">
+              <div className="text-3xl font-semibold tracking-tight sm:text-4xl">{APP_NAME}</div>
+              <div className="text-sm text-zinc-700">Voice notes → text</div>
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
             <Badge className="gap-1 bg-zinc-900 text-white hover:bg-zinc-900">
               <Zap className="size-3.5" />
               Action Button ready
