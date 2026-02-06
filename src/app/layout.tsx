@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   description:
     "Veura turns recordings and voice notes into plain text you can copy and send. Action Button ready. Works on iPhone and iPad.",
   metadataBase: new URL("https://veura.app"),
+  icons: {
+    icon: [{ url: "/brand/app-icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png" }],
+  },
   openGraph: {
     title: "Veura",
     description:

@@ -37,8 +37,15 @@ function SiteHeader() {
     <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="#" className="flex items-center gap-2 font-semibold tracking-tight">
-          <div className="grid size-8 place-items-center rounded-xl bg-foreground text-background">
-            <span className="text-sm">V</span>
+          <div className="relative size-8 overflow-hidden rounded-xl border bg-muted">
+            <Image
+              src="/brand/app-icon.png"
+              alt="Veura app icon"
+              fill
+              className="object-cover"
+              sizes="32px"
+              priority
+            />
           </div>
           <span>{APP_NAME}</span>
           <Badge variant="secondary" className="ml-2 hidden sm:inline-flex">
