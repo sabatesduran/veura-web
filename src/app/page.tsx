@@ -289,26 +289,32 @@ function Testimonials() {
     {
       quote: "Finally I don’t have to listen to 3 minutes of voice note at 2× speed just to get ‘ok’.",
       name: "Recovered WhatsApp Survivor",
+      avatar: "/avatars/t1.webp",
     },
     {
       quote: "I started replying to my friends again. Turns out I wasn’t busy — I just hate voice notes.",
       name: "Reformed Ghoster",
+      avatar: "/avatars/t2.webp",
     },
     {
       quote: "Veura turned ‘uhh… so… basically…’ into actual sentences. Miracles are real.",
       name: "Professional Meeting Attendee",
+      avatar: "/avatars/t3.webp",
     },
     {
       quote: "My group chat is now readable. I feel like I’ve unlocked DLC for friendship.",
       name: "Chat Archaeologist",
+      avatar: "/avatars/t4.webp",
     },
     {
       quote: "I copy-pasted a voice note into a polite message and immediately looked like I have my life together.",
       name: "Accidental Adult",
+      avatar: "/avatars/t5.webp",
     },
     {
       quote: "I used to dread ‘listen when you can’. Now I just read it when I can. Huge upgrade.",
       name: "Time Enjoyer",
+      avatar: "/avatars/t6.webp",
     },
   ];
 
@@ -325,9 +331,22 @@ function Testimonials() {
 
       <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
         {items.map((t) => (
-          <Card key={t.name} className="p-6">
-            <p className="text-sm leading-relaxed">“{t.quote}”</p>
-            <p className="mt-4 text-xs text-muted-foreground">— {t.name}</p>
+          <Card key={t.name} className="border-black/10 bg-white/70 p-6 shadow-[0_16px_45px_rgba(0,0,0,0.12)]">
+            <div className="flex items-center gap-3">
+              <div className="relative size-10 overflow-hidden rounded-full border border-black/10 bg-white">
+                <Image
+                  src={t.avatar}
+                  alt={t.name}
+                  fill
+                  className="object-cover"
+                  sizes="40px"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-sm font-semibold">{t.name}</div>
+            </div>
+
+            <p className="mt-4 text-sm leading-relaxed">“{t.quote}”</p>
           </Card>
         ))}
       </div>
