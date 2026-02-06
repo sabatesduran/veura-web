@@ -64,9 +64,6 @@ function SiteHeader() {
             />
           </div>
           <span>{APP_NAME}</span>
-          <Badge variant="secondary" className="ml-2 hidden sm:inline-flex">
-            iOS
-          </Badge>
         </a>
 
         <nav className="hidden items-center gap-1 md:flex">
