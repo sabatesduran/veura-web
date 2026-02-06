@@ -13,7 +13,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 const APP_NAME = "Veura";
-const TAGLINE = "Turn voice notes into clean text — instantly.";
+const TAGLINE = "The fastest way to turn voice notes into text.";
 
 export default function Home() {
   return (
@@ -73,115 +73,140 @@ function SiteHeader() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 [background:radial-gradient(60rem_60rem_at_50%_-10%,hsl(var(--primary)/0.15),transparent)]" />
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
-        <div className="flex flex-col justify-center">
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge className="gap-1">
+    <section className="relative overflow-hidden bg-[#e9e6f5] text-zinc-950">
+      {/* subtle dotted paper */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.28] [background-image:radial-gradient(rgba(20,20,40,0.35)_1px,transparent_1px)] [background-size:14px_14px]" />
+
+      <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+        <header className="flex flex-col items-center text-center">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <Badge className="gap-1 bg-zinc-900 text-white hover:bg-zinc-900">
               <Zap className="size-3.5" />
               Action Button ready
             </Badge>
-            <Badge variant="secondary" className="gap-1">
+            <Badge variant="secondary" className="gap-1 bg-white/70 text-zinc-900">
               <Mic className="size-3.5" />
-              On-device transcription
+              On-device
             </Badge>
-            <Badge variant="secondary" className="gap-1">
+            <Badge variant="secondary" className="gap-1 bg-white/70 text-zinc-900">
               <Share2 className="size-3.5" />
-              WhatsApp voice notes
+              WhatsApp import
             </Badge>
           </div>
 
-          <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight sm:text-6xl">
             {TAGLINE}
           </h1>
 
-          <p className="mt-4 max-w-prose text-pretty text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-pretty text-lg text-zinc-700">
             {APP_NAME} turns recordings and voice notes into plain text you can copy and send.
-            Fast, minimal, and designed for the way people actually message.
+            No accounts. No clutter. Just text.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="bg-zinc-900 text-white hover:bg-zinc-900/90">
               <a href="#download">
-                Download on iPhone/iPad <ArrowRight className="ml-2 size-4" />
+                Get Veura <ArrowRight className="ml-2 size-4" />
               </a>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
-              <a href="#how">See the flow</a>
+            <Button
+              size="lg"
+              variant="secondary"
+              asChild
+              className="bg-white/70 text-zinc-900 hover:bg-white"
+            >
+              <a href="#how">See how it works</a>
             </Button>
           </div>
+        </header>
 
-          <p className="mt-4 text-sm text-muted-foreground">
-            No accounts. Plain text output. Copy → paste anywhere.
-          </p>
-        </div>
+        <div className="relative mt-12 grid items-center gap-10 md:mt-16 md:grid-cols-[1fr_420px_1fr]">
+          {/* left polaroids */}
+          <div className="relative hidden md:block">
+            <Polaroid
+              src="/screens/share-extension.jpg"
+              label="Import from WhatsApp"
+              className="absolute left-6 top-0 -rotate-6"
+            />
+            <Polaroid
+              src="/screens/transcription-blurred.jpg"
+              label="Plain text output"
+              className="absolute left-20 top-56 rotate-6"
+            />
+          </div>
 
-        <div className="relative">
-          <Card className="relative overflow-hidden p-6">
-            <div className="absolute inset-0 opacity-[0.35] [background:radial-gradient(40rem_40rem_at_20%_10%,hsl(var(--primary)/0.22),transparent)]" />
-            <div className="relative">
-              <div className="flex items-center justify-between">
-                <div className="text-sm font-semibold">Quick Dictation</div>
-                <Badge variant="secondary" className="gap-1">
-                  <Sparkles className="size-3.5" />
-                  Auto-copy
-                </Badge>
-              </div>
-
-              <div className="mt-4 rounded-2xl border bg-muted/30 p-4">
-                <div className="text-xs text-muted-foreground">TRANSCRIPT</div>
-                <div className="mt-2 space-y-2 text-sm">
-                  <p>
-                    “Hey — quick update: I’ll send the invoice today. Next week we can
-                    review the plan and pick the final direction.”
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-4 grid grid-cols-3 gap-2">
-                <MiniAction label="Copy" />
-                <MiniAction label="Share" />
-                <MiniAction label="Reprocess" />
-              </div>
-
-              <Separator className="my-5" />
-
-              <div className="grid gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
-                    <Mic className="size-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">Action Button</div>
-                    <div className="text-sm text-muted-foreground">Press → record → stop → copied.</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="grid size-10 place-items-center rounded-2xl bg-secondary text-secondary-foreground">
-                    <Share2 className="size-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">Share from WhatsApp</div>
-                    <div className="text-sm text-muted-foreground">Voice note → text → copy.</div>
-                  </div>
-                </div>
+          {/* center phone */}
+          <div className="relative mx-auto w-full max-w-[420px]">
+            <div className="relative overflow-hidden rounded-[2.3rem] border-[10px] border-zinc-950 bg-zinc-950 shadow-[0_30px_80px_rgba(0,0,0,0.25)]">
+              <div className="relative aspect-[9/19.5] w-full">
+                <Image
+                  src="/screens/record.jpg"
+                  alt="Veura recording screen"
+                  fill
+                  className="object-cover"
+                  sizes="420px"
+                  priority
+                />
               </div>
             </div>
-          </Card>
+          </div>
 
-          <div className="pointer-events-none absolute -right-8 -top-8 size-56 rounded-full bg-primary/15 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-10 -left-10 size-56 rounded-full bg-secondary/25 blur-3xl" />
+          {/* right polaroids */}
+          <div className="relative hidden md:block">
+            <Polaroid
+              src="/screens/settings.jpg"
+              label="On-device models"
+              className="absolute right-10 top-8 rotate-6"
+            />
+          </div>
+
+          {/* mobile: show 3 polaroids under phone */}
+          <div className="mx-auto grid max-w-[520px] grid-cols-1 gap-4 md:hidden">
+            <Polaroid src="/screens/share-extension.jpg" label="Import from WhatsApp" />
+            <Polaroid src="/screens/transcription-blurred.jpg" label="Plain text output" />
+            <Polaroid src="/screens/settings.jpg" label="On-device models" />
+          </div>
         </div>
+
+        <p className="mt-6 text-center text-xs text-zinc-600">
+          Screenshots are real. Transcript content blurred for privacy.
+        </p>
       </div>
     </section>
   );
 }
 
-function MiniAction({ label }: { label: string }) {
+function Polaroid({
+  src,
+  label,
+  className,
+}: {
+  src: string;
+  label: string;
+  className?: string;
+}) {
   return (
-    <div className="rounded-xl border bg-background/60 px-3 py-2 text-center text-xs font-medium text-muted-foreground">
-      {label}
+    <div
+      className={
+        "w-[260px] rounded-[22px] bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.18)] ring-1 ring-black/5 " +
+        (className ?? "")
+      }
+    >
+      <div className="relative overflow-hidden rounded-[16px] bg-zinc-100">
+        <div className="relative aspect-[9/19.5] w-full">
+          <Image
+            src={src}
+            alt={label}
+            fill
+            className="object-cover"
+            sizes="260px"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div className="px-1 pt-3 text-center text-xs font-medium text-zinc-700">
+        {label}
+      </div>
     </div>
   );
 }
