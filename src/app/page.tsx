@@ -21,6 +21,7 @@ export default function Home() {
       <SiteHeader />
       <Hero />
       <Screenshots />
+      <Testimonials />
       <LogosStrip />
       <Features />
       <HowItWorks />
@@ -259,6 +260,57 @@ function Screenshots() {
       <p className="mt-3 text-xs text-muted-foreground">
         Real screenshots. Transcript content blurred for privacy.
       </p>
+    </section>
+  );
+}
+
+function Testimonials() {
+  const items = [
+    {
+      quote: "Finally I don’t have to listen to 3 minutes of voice note at 2× speed just to get ‘ok’.",
+      name: "Recovered WhatsApp Survivor",
+    },
+    {
+      quote: "I started replying to my friends again. Turns out I wasn’t busy — I just hate voice notes.",
+      name: "Reformed Ghoster",
+    },
+    {
+      quote: "Veura turned ‘uhh… so… basically…’ into actual sentences. Miracles are real.",
+      name: "Professional Meeting Attendee",
+    },
+    {
+      quote: "My group chat is now readable. I feel like I’ve unlocked DLC for friendship.",
+      name: "Chat Archaeologist",
+    },
+    {
+      quote: "I copy-pasted a voice note into a polite message and immediately looked like I have my life together.",
+      name: "Accidental Adult",
+    },
+    {
+      quote: "I used to dread ‘listen when you can’. Now I just read it when I can. Huge upgrade.",
+      name: "Time Enjoyer",
+    },
+  ];
+
+  return (
+    <section className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+      <div className="flex flex-col gap-3 text-center">
+        <h2 className="text-balance text-3xl font-semibold tracking-tight">
+          Completely serious testimonials
+        </h2>
+        <p className="mx-auto max-w-2xl text-pretty text-muted-foreground">
+          Real feelings. Slightly exaggerated for legal reasons.
+        </p>
+      </div>
+
+      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+        {items.map((t) => (
+          <Card key={t.name} className="p-6">
+            <p className="text-sm leading-relaxed">“{t.quote}”</p>
+            <p className="mt-4 text-xs text-muted-foreground">— {t.name}</p>
+          </Card>
+        ))}
+      </div>
     </section>
   );
 }
