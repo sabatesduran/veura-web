@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import { Iphone17Pro } from "@/components/eldoraui/iphone-17-pro";
 
-import { FeaturesAnimated } from "@/components/features-animated";
-
 import { ArrowRight, Check, Clock, Globe, Lock, Mic, Share2, Sparkles, Zap } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -21,7 +19,7 @@ export default function Home() {
     <main className="min-h-dvh bg-background text-foreground">
       <SiteHeader />
       <Hero />
-      <FeaturesAnimated appStoreHref="#" />
+      <Features />
       <HowItWorks />
       <Privacy />
       <FAQ />
@@ -177,7 +175,66 @@ function Hero() {
   );
 }
 
-// Features section moved to a client component (Framer Motion): <FeaturesAnimated />
+function Features() {
+  const items = [
+    {
+      icon: <Share2 className="size-5" />,
+      title: "WhatsApp voice notes → text",
+      body: "Share a voice message into Veura and get text you can copy, edit, or send.",
+    },
+    {
+      icon: <Zap className="size-5" />,
+      title: "Action Button quick dictation",
+      body: "Press, speak, stop — your text appears instantly.",
+    },
+    {
+      icon: <Lock className="size-5" />,
+      title: "On-device & offline",
+      body: "Transcription runs locally. Your audio stays on your phone.",
+    },
+    {
+      icon: <Globe className="size-5" />,
+      title: "Multiple languages",
+      body: "Switch language + model depending on speed vs accuracy.",
+    },
+  ];
+
+  return (
+    <section id="features" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <SectionTitle
+        title="Built for the way people actually message"
+        body="Voice notes are convenient for the sender — annoying for everyone else. Veura flips that."
+      />
+
+      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {items.map((f) => (
+          <Card
+            key={f.title}
+            className="border-black/10 bg-white/70 p-6 shadow-[0_16px_45px_rgba(0,0,0,0.12)]"
+          >
+            <div className="flex items-center gap-3">
+              <div className="grid size-10 place-items-center rounded-2xl bg-primary/10 text-primary">
+                {f.icon}
+              </div>
+              <div className="text-base font-semibold">{f.title}</div>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">{f.body}</p>
+          </Card>
+        ))}
+      </div>
+
+      <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-black/10 bg-white/50 p-6 shadow-[0_14px_40px_rgba(0,0,0,0.10)] md:flex-row md:items-center">
+        <div>
+          <div className="text-sm font-semibold">Ready to try it?</div>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Works on iPhone + iPad. Offline. Copy/paste everywhere.
+          </p>
+        </div>
+        <AppStoreBadge />
+      </div>
+    </section>
+  );
+}
 
 function HowItWorks() {
   const steps = [

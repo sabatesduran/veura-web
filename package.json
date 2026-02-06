@@ -24,7 +24,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "framer-motion": "^12.33.0",
     "lucide-react": "^0.563.0",
     "shadcn": "^3.8.4",
     "tailwindcss": "^4",
