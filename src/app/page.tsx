@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+import recordShot from "@/assets/screens/record.jpg";
+import shareShot from "@/assets/screens/share-extension.jpg";
+import transcriptionShot from "@/assets/screens/transcription-blurred.jpg";
+import settingsShot from "@/assets/screens/settings.jpg";
+
 import { ArrowRight, Lock, Mic, Share2, Sparkles, Zap } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -177,22 +182,22 @@ function MiniAction({ label }: { label: string }) {
 function Screenshots() {
   const shots = [
     {
-      src: "/screens/record.jpg",
+      src: recordShot,
       alt: "Veura recording screen",
       label: "Quick Dictation",
     },
     {
-      src: "/screens/share-extension.jpg",
+      src: shareShot,
       alt: "Veura share extension importing a voice note",
       label: "Import from WhatsApp",
     },
     {
-      src: "/screens/transcription-blurred.jpg",
+      src: transcriptionShot,
       alt: "Veura transcription output screen",
       label: "Plain text output",
     },
     {
-      src: "/screens/settings.jpg",
+      src: settingsShot,
       alt: "Veura settings showing downloadable Whisper models",
       label: "On-device models",
     },
@@ -201,8 +206,8 @@ function Screenshots() {
   return (
     <section className="mx-auto max-w-6xl px-4 pb-4 md:pb-10">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {shots.map((shot) => (
-          <Card key={shot.src} className="overflow-hidden">
+        {shots.map((shot, idx) => (
+          <Card key={shot.label} className="overflow-hidden">
             <div className="border-b bg-muted/20 px-3 py-2 text-xs font-medium text-muted-foreground">
               {shot.label}
             </div>
@@ -213,7 +218,7 @@ function Screenshots() {
                 fill
                 className="object-cover"
                 sizes="(min-width: 768px) 25vw, 50vw"
-                priority={shot.src === "/screens/record.jpg"}
+                priority={idx === 0}
               />
             </div>
           </Card>
