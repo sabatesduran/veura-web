@@ -115,7 +115,7 @@ function Hero() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M240 135 C 340 140, 380 190, 455 215 C 560 250, 690 235, 770 215 C 850 195, 910 160, 945 135"
+          d="M320 155 C 420 160, 485 210, 575 222 C 645 232, 710 222, 760 205 C 820 182, 860 150, 900 125"
           stroke="rgba(17,24,39,0.35)"
           strokeWidth="6"
           strokeLinecap="round"
@@ -123,7 +123,7 @@ function Hero() {
           strokeDasharray="1 14"
         />
         <path
-          d="M930 145 L952 132 L942 156"
+          d="M882 135 L904 124 L894 148"
           stroke="rgba(17,24,39,0.35)"
           strokeWidth="6"
           strokeLinecap="round"
