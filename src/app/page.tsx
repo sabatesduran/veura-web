@@ -165,28 +165,23 @@ function Hero() {
             />
           </div>
 
-          {/* secondary supporting visual (small polaroid) */}
-          <div className="pointer-events-none absolute -left-2 top-10 hidden w-[220px] -rotate-6 md:block">
-            <PolaroidMini src="/screens/share-extension.jpg" label="Import from WhatsApp" />
+          {/* secondary supporting visual (WhatsApp import) */}
+          <div className="pointer-events-none absolute -left-6 top-8 hidden w-[240px] -rotate-6 md:block">
+            <div className="rounded-[22px] bg-white/90 p-3 shadow-[0_20px_55px_rgba(0,0,0,0.18)] ring-1 ring-black/10">
+              <div className="mx-auto w-full">
+                <Iphone17Pro
+                  src="/screens/share-extension.jpg"
+                  className="h-[360px] w-full text-zinc-950"
+                />
+              </div>
+              <div className="px-1 pt-3 text-center text-xs font-medium text-zinc-700">
+                Import from WhatsApp
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function PolaroidMini({ src, label }: { src: string; label: string }) {
-  return (
-    <div className="rounded-[22px] bg-white/90 p-3 shadow-[0_20px_55px_rgba(0,0,0,0.18)] ring-1 ring-black/10">
-      <div className="relative overflow-hidden rounded-[16px] bg-zinc-100">
-        <div className="relative aspect-[9/19.5] w-full">
-          <Image src={src} alt={label} fill className="object-cover" sizes="220px" />
-        </div>
-      </div>
-      <div className="px-1 pt-3 text-center text-xs font-medium text-zinc-700">
-        {label}
-      </div>
-    </div>
   );
 }
 
