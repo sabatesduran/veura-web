@@ -35,7 +35,7 @@ export default function Home() {
 
 function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="#" className="flex items-center gap-2 font-semibold tracking-tight">
           <div className="relative size-8 overflow-hidden rounded-xl border bg-muted">
@@ -74,9 +74,9 @@ function SiteHeader() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#e9e6f5] text-zinc-950">
+    <section className="relative overflow-hidden bg-background text-foreground">
       {/* subtle dotted paper */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.28] [background-image:radial-gradient(rgba(20,20,40,0.35)_1px,transparent_1px)] [background-size:14px_14px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.25] [background-image:radial-gradient(rgba(55,48,163,0.22)_1px,transparent_1px)] [background-size:14px_14px]" />
 
       <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
         <header className="flex flex-col items-center text-center">
@@ -93,20 +93,20 @@ function Hero() {
             </div>
             <div className="text-left">
               <div className="text-3xl font-semibold tracking-tight sm:text-4xl">{APP_NAME}</div>
-              <div className="text-sm text-zinc-700">Voice notes → text</div>
+              <div className="text-sm text-muted-foreground">Voice notes → text</div>
             </div>
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-            <Badge className="gap-1 bg-zinc-900 text-white hover:bg-zinc-900">
+            <Badge className="gap-1 bg-primary text-primary-foreground hover:bg-primary/90">
               <Zap className="size-3.5" />
               Action Button ready
             </Badge>
-            <Badge variant="secondary" className="gap-1 bg-white/70 text-zinc-900">
+            <Badge variant="secondary" className="gap-1 bg-secondary text-secondary-foreground">
               <Mic className="size-3.5" />
               On-device
             </Badge>
-            <Badge variant="secondary" className="gap-1 bg-white/70 text-zinc-900">
+            <Badge variant="secondary" className="gap-1 bg-secondary text-secondary-foreground">
               <Share2 className="size-3.5" />
               WhatsApp import
             </Badge>
@@ -116,13 +116,13 @@ function Hero() {
             {TAGLINE}
           </h1>
 
-          <p className="mt-4 max-w-2xl text-pretty text-lg text-zinc-700">
+          <p className="mt-4 max-w-2xl text-pretty text-lg text-muted-foreground">
             {APP_NAME} turns recordings and voice notes into plain text you can copy and send.
             No accounts. No clutter. Just text.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" asChild className="bg-zinc-900 text-white hover:bg-zinc-900/90">
+            <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
               <a href="#download">
                 Get Veura <ArrowRight className="ml-2 size-4" />
               </a>
@@ -131,7 +131,7 @@ function Hero() {
               size="lg"
               variant="secondary"
               asChild
-              className="bg-white/70 text-zinc-900 hover:bg-white"
+              className="bg-secondary text-secondary-foreground hover:bg-white"
             >
               <a href="#how">See how it works</a>
             </Button>
@@ -186,7 +186,7 @@ function Hero() {
           </div>
         </div>
 
-        <p className="mt-6 text-center text-xs text-zinc-600">
+        <p className="mt-6 text-center text-xs text-muted-foreground">
           Screenshots are real. Transcript content blurred for privacy.
         </p>
       </div>
@@ -206,7 +206,7 @@ function Polaroid({
   return (
     <div
       className={
-        "w-[260px] rounded-[22px] bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.18)] ring-1 ring-black/5 " +
+        "w-[260px] rounded-[22px] bg-white/90 p-3 shadow-[0_20px_55px_rgba(0,0,0,0.18)] ring-1 ring-black/10 " +
         (className ?? "")
       }
     >
@@ -254,11 +254,14 @@ function Screenshots() {
   ];
 
   return (
-    <section className="mx-auto max-w-6xl px-4 pb-4 md:pb-10">
+    <section className="mx-auto max-w-6xl px-4 pb-6 md:pb-10">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {shots.map((shot, idx) => (
-          <Card key={shot.label} className="overflow-hidden">
-            <div className="border-b bg-muted/20 px-3 py-2 text-xs font-medium text-muted-foreground">
+          <Card
+            key={shot.label}
+            className="overflow-hidden border-black/10 bg-white/70 shadow-[0_16px_45px_rgba(0,0,0,0.14)]"
+          >
+            <div className="border-b border-black/10 bg-white/50 px-3 py-2 text-xs font-medium text-muted-foreground">
               {shot.label}
             </div>
             <div className="relative aspect-[9/19.5] w-full">
@@ -334,7 +337,7 @@ function Testimonials() {
 
 function LogosStrip() {
   return (
-    <section className="border-y bg-muted/20">
+    <section className="border-y border-black/10 bg-white/30">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8">
         <p className="text-sm text-muted-foreground">
           Built for real life messaging: voice notes, quick dictation, and copy-paste workflows.
@@ -408,7 +411,7 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <Card className="p-6">
+    <Card className="border-black/10 bg-white/70 p-6 shadow-[0_16px_45px_rgba(0,0,0,0.12)]">
       <div className="flex items-center gap-3">
         <div className="grid size-10 place-items-center rounded-2xl bg-primary/10 text-primary">
           {icon}
@@ -422,7 +425,7 @@ function FeatureCard({
 
 function HowItWorks() {
   return (
-    <section id="how" className="bg-muted/20">
+    <section id="how" className="bg-white/30">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           <div>
@@ -517,7 +520,7 @@ function Privacy() {
 
 function Platforms() {
   return (
-    <section className="bg-muted/20">
+    <section className="bg-white/30">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <Card className="p-6">
