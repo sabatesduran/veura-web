@@ -362,9 +362,6 @@ function HowItWorks() {
           </div>
         </div>
 
-        <div className="mt-12 flex items-center justify-center">
-          <AppStoreBadge />
-        </div>
       </div>
     </section>
   );
@@ -390,9 +387,6 @@ function Privacy() {
         </TrustCard>
       </div>
 
-      <div className="mt-12 flex items-center justify-center">
-        <AppStoreBadge />
-      </div>
     </section>
   );
 }
@@ -459,9 +453,6 @@ function FAQ() {
           ))}
         </div>
 
-        <div className="mt-12 flex items-center justify-center">
-          <AppStoreBadge />
-        </div>
       </div>
     </section>
   );
