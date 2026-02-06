@@ -1,9 +1,6 @@
 import Image from "next/image";
 
-import recordShot from "@/assets/screens/record.jpg";
-import shareShot from "@/assets/screens/share-extension.jpg";
-import transcriptionShot from "@/assets/screens/transcription-blurred.jpg";
-import settingsShot from "@/assets/screens/settings.jpg";
+import { Iphone17Pro } from "@/components/eldoraui/iphone-17-pro";
 
 import { ArrowRight, Lock, Mic, Share2, Sparkles, Zap } from "lucide-react";
 
@@ -155,18 +152,10 @@ function Hero() {
 
           {/* center phone */}
           <div className="relative mx-auto w-full max-w-[420px]">
-            <IPhoneFrame>
-              <div className="relative aspect-[9/19.5] w-full">
-                <Image
-                  src="/screens/record.jpg"
-                  alt="Veura recording screen"
-                  fill
-                  className="object-cover"
-                  sizes="420px"
-                  priority
-                />
-              </div>
-            </IPhoneFrame>
+            <Iphone17Pro
+              src="/screens/record.jpg"
+              className="h-[520px] w-auto text-zinc-950 drop-shadow-[0_30px_80px_rgba(0,0,0,0.25)]"
+            />
           </div>
 
           {/* right polaroids */}
@@ -194,26 +183,7 @@ function Hero() {
   );
 }
 
-function IPhoneFrame({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={
-        "relative overflow-hidden rounded-[2.3rem] border-[10px] border-zinc-950 bg-zinc-950 shadow-[0_30px_80px_rgba(0,0,0,0.25)] " +
-        (className ?? "")
-      }
-    >
-      {/* notch */}
-      <div className="pointer-events-none absolute left-1/2 top-0 z-10 h-[22px] w-[140px] -translate-x-1/2 rounded-b-[16px] bg-zinc-950" />
-      <div className="relative">{children}</div>
-    </div>
-  );
-}
+// (removed) old IPhoneFrame component; replaced by EldoraUI Iphone17Pro
 
 function Polaroid({
   src,
@@ -253,22 +223,22 @@ function Polaroid({
 function Screenshots() {
   const shots = [
     {
-      src: recordShot,
+      src: "/screens/record.jpg",
       alt: "Veura recording screen",
       label: "Quick Dictation",
     },
     {
-      src: shareShot,
+      src: "/screens/share-extension.jpg",
       alt: "Veura share extension importing a voice note",
       label: "Import from WhatsApp",
     },
     {
-      src: transcriptionShot,
+      src: "/screens/transcription-blurred.jpg",
       alt: "Veura transcription output screen",
       label: "Plain text output",
     },
     {
-      src: settingsShot,
+      src: "/screens/settings.jpg",
       alt: "Veura settings showing downloadable Whisper models",
       label: "On-device models",
     },
@@ -285,19 +255,11 @@ function Screenshots() {
             <div className="border-b border-black/10 bg-white/50 px-3 py-2 text-xs font-medium text-muted-foreground">
               {shot.label}
             </div>
-            <div className="p-3">
-              <IPhoneFrame className="border-[8px] shadow-[0_20px_55px_rgba(0,0,0,0.18)]">
-                <div className="relative aspect-[9/19.5] w-full">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 768px) 25vw, 50vw"
-                    priority={idx === 0}
-                  />
-                </div>
-              </IPhoneFrame>
+            <div className="p-4">
+              <Iphone17Pro
+                src={shot.src}
+                className="h-[360px] w-full text-zinc-950 drop-shadow-[0_20px_55px_rgba(0,0,0,0.18)]"
+              />
             </div>
           </Card>
         ))}
