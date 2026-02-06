@@ -157,15 +157,36 @@ function Hero() {
 
           {/* secondary supporting visual (WhatsApp import) */}
           <div className="pointer-events-none absolute -left-6 top-8 hidden w-[240px] -rotate-6 md:block">
-            <div className="rounded-[22px] bg-white/90 p-3 shadow-[0_20px_55px_rgba(0,0,0,0.18)] ring-1 ring-black/10">
-              <div className="mx-auto w-full">
-                <Iphone17Pro
-                  src="/screens/share-extension.jpg"
-                  className="h-[360px] w-full text-zinc-950"
-                />
-              </div>
-              <div className="px-1 pt-3 text-center text-xs font-medium text-zinc-700">
-                Import from WhatsApp
+            <div className="mx-auto w-full">
+              <Iphone17Pro
+                src="/screens/share-extension.jpg"
+                className="h-[360px] w-full text-zinc-950 drop-shadow-[0_20px_55px_rgba(0,0,0,0.18)]"
+              />
+            </div>
+
+            {/* doodle arrow + label */}
+            <div className="absolute -left-24 top-24 rotate-[8deg]">
+              <div className="relative">
+                <svg width="140" height="120" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 95 C 40 55, 65 45, 95 35 C 112 29, 125 24, 132 14"
+                    stroke="rgba(17,24,39,0.65)"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeDasharray="1 10"
+                  />
+                  <path
+                    d="M120 18 L134 12 L128 26"
+                    stroke="rgba(17,24,39,0.65)"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="absolute left-0 top-[70px] -rotate-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-zinc-900 ring-1 ring-black/10 shadow-sm">
+                  Import from WhatsApp
+                </div>
               </div>
             </div>
           </div>
