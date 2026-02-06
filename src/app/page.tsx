@@ -460,14 +460,20 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section id="download" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <Card className="relative overflow-hidden border-black/10 bg-white/70 p-10 shadow-[0_16px_45px_rgba(0,0,0,0.12)]">
-        <div className="pointer-events-none absolute inset-0 [background:radial-gradient(50rem_50rem_at_20%_10%,rgba(79,70,229,0.15),transparent)]" />
-        <div className="relative">
+    <section
+      id="download"
+      className="relative overflow-hidden border-t border-black/10 py-16 md:py-24"
+    >
+      {/* full-width gradient */}
+      <div className="pointer-events-none absolute inset-0 [background:radial-gradient(60rem_60rem_at_20%_10%,rgba(79,70,229,0.18),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-white/10" />
+
+      <div className="relative mx-auto max-w-6xl px-4">
+        <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-semibold tracking-tight">
             Turn voice notes into text. Instantly.
           </h2>
-          <p className="mt-3 max-w-2xl text-pretty text-muted-foreground">
+          <p className="mt-3 text-pretty text-muted-foreground">
             Offline, on-device transcription for messaging. Copy → paste anywhere.
           </p>
 
@@ -482,7 +488,7 @@ function FinalCTA() {
             App Store link placeholder for now.
           </p>
         </div>
-      </Card>
+      </div>
     </section>
   );
 }
