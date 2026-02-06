@@ -611,19 +611,26 @@ function FinalCTA() {
             Get the text. Copy it. Send it. Move on.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" asChild>
-              <a href="#" aria-label="Download Veura">
-                Download Veura <ArrowRight className="ml-2 size-4" />
-              </a>
-            </Button>
-            <Button size="lg" variant="secondary" asChild>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:items-start">
+            <a
+              href="#"
+              aria-label="Download on the App Store"
+              className="inline-flex items-center justify-center rounded-xl shadow-[0_16px_45px_rgba(0,0,0,0.18)] ring-1 ring-black/10 transition-transform hover:-translate-y-0.5"
+            >
+              <img
+                src="/brand/app-store-badge.svg"
+                alt="Download on the App Store"
+                className="h-11 w-auto"
+              />
+            </a>
+
+            <Button size="lg" variant="secondary" asChild className="bg-secondary text-secondary-foreground">
               <a href="#features">Explore features</a>
             </Button>
           </div>
 
           <p className="mt-4 text-xs text-muted-foreground">
-            App Store link coming soon.
+            App Store link coming soon. (We’ll swap this badge to the real link once it’s live.)
           </p>
         </div>
       </Card>
