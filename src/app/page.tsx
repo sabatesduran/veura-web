@@ -155,7 +155,7 @@ function Hero() {
 
           {/* center phone */}
           <div className="relative mx-auto w-full max-w-[420px]">
-            <div className="relative overflow-hidden rounded-[2.3rem] border-[10px] border-zinc-950 bg-zinc-950 shadow-[0_30px_80px_rgba(0,0,0,0.25)]">
+            <IPhoneFrame>
               <div className="relative aspect-[9/19.5] w-full">
                 <Image
                   src="/screens/record.jpg"
@@ -166,7 +166,7 @@ function Hero() {
                   priority
                 />
               </div>
-            </div>
+            </IPhoneFrame>
           </div>
 
           {/* right polaroids */}
@@ -191,6 +191,27 @@ function Hero() {
         </p>
       </div>
     </section>
+  );
+}
+
+function IPhoneFrame({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={
+        "relative overflow-hidden rounded-[2.3rem] border-[10px] border-zinc-950 bg-zinc-950 shadow-[0_30px_80px_rgba(0,0,0,0.25)] " +
+        (className ?? "")
+      }
+    >
+      {/* notch */}
+      <div className="pointer-events-none absolute left-1/2 top-0 z-10 h-[22px] w-[140px] -translate-x-1/2 rounded-b-[16px] bg-zinc-950" />
+      <div className="relative">{children}</div>
+    </div>
   );
 }
 
@@ -264,15 +285,19 @@ function Screenshots() {
             <div className="border-b border-black/10 bg-white/50 px-3 py-2 text-xs font-medium text-muted-foreground">
               {shot.label}
             </div>
-            <div className="relative aspect-[9/19.5] w-full">
-              <Image
-                src={shot.src}
-                alt={shot.alt}
-                fill
-                className="object-cover"
-                sizes="(min-width: 768px) 25vw, 50vw"
-                priority={idx === 0}
-              />
+            <div className="p-3">
+              <IPhoneFrame className="border-[8px] shadow-[0_20px_55px_rgba(0,0,0,0.18)]">
+                <div className="relative aspect-[9/19.5] w-full">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 25vw, 50vw"
+                    priority={idx === 0}
+                  />
+                </div>
+              </IPhoneFrame>
             </div>
           </Card>
         ))}
