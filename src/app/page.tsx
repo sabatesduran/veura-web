@@ -105,6 +105,32 @@ function Hero() {
       {/* soft hero glow */}
       <div className="pointer-events-none absolute inset-x-0 top-[-20%] mx-auto h-[520px] max-w-5xl rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(79,70,229,0.22),transparent_60%)] blur-2xl" />
 
+      {/* doodle arrow (desktop) pointing from badges to WhatsApp import mock */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 hidden md:block"
+        viewBox="0 0 1000 600"
+        preserveAspectRatio="none"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M240 135 C 340 140, 380 190, 455 215 C 560 250, 690 235, 770 215 C 850 195, 910 160, 945 135"
+          stroke="rgba(17,24,39,0.35)"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray="1 14"
+        />
+        <path
+          d="M930 145 L952 132 L942 156"
+          stroke="rgba(17,24,39,0.35)"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
         <div className="flex flex-col justify-center">
           <div className="flex flex-wrap items-center gap-2">
@@ -166,7 +192,7 @@ function Hero() {
           </div>
 
           {/* doodle arrow from the WhatsApp badge to the screenshot */}
-          <div className="pointer-events-none absolute left-0 top-0 hidden md:block">
+          <div className="hidden">
             <svg
               width="520"
               height="220"
