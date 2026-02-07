@@ -112,16 +112,16 @@ function Hero() {
       >
         <path
           d="M330 140 C 400 132, 455 145, 520 165 C 585 185, 640 196, 690 192 C 720 190, 740 182, 760 170"
-          stroke="rgba(17,24,39,0.38)"
-          strokeWidth="6"
+          stroke="rgba(17,24,39,0.34)"
+          strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeDasharray="1 12"
+          strokeDasharray="1 11"
         />
         <path
           d="M744 176 L764 168 L754 190"
-          stroke="rgba(17,24,39,0.38)"
-          strokeWidth="6"
+          stroke="rgba(17,24,39,0.34)"
+          strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
