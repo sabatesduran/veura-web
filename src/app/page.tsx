@@ -21,7 +21,6 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
-      <Privacy />
       <FAQ />
       <FinalCTA />
       <SiteFooter />
@@ -360,30 +359,6 @@ function HowItWorks() {
         </div>
 
       </div>
-    </section>
-  );
-}
-
-function Privacy() {
-  return (
-    <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <SectionTitle
-        title="Privacy-first by design"
-        body="Veura runs transcription locally. Your audio stays on your device."
-      />
-
-      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
-        <TrustCard icon={<Lock className="size-5" />} title="On-device processing">
-          No accounts. No uploads required.
-        </TrustCard>
-        <TrustCard icon={<Clock className="size-5" />} title="Fast">
-          Optimized for quick dictation and messaging.
-        </TrustCard>
-        <TrustCard icon={<Check className="size-5" />} title="Plain text">
-          Output is simple, portable, and shareable.
-        </TrustCard>
-      </div>
-
     </section>
   );
 }
