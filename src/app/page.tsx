@@ -458,6 +458,9 @@ function SiteFooter() {
           <a className="hover:text-foreground" href="#download">
             Download
           </a>
+          <a className="hover:text-foreground" href="/privacy">
+            Privacy
+          </a>
         </div>
       </div>
     </footer>
