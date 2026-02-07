@@ -33,8 +33,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const appStoreAppId = process.env.APPLE_APP_ID;
+  const appArgument = process.env.APPLE_APP_ARGUMENT ?? "veura://";
+
   return (
     <html lang="en">
+      <head>
+        {/* iOS Smart App Banner (Safari) */}
+        {appStoreAppId ? (
+          <meta
+            name="apple-itunes-app"
+            content={`app-id=${appStoreAppId}, app-argument=${appArgument}`}
+          />
+        ) : null}
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
