@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 
 import { Iphone17Pro } from "@/components/eldoraui/iphone-17-pro";
 
@@ -17,7 +18,7 @@ const SUBHEAD =
 export default function Home() {
   return (
     <main className="min-h-dvh bg-background text-foreground">
-      <SiteHeader />
+      <SiteHeader variant="home" />
       <Hero />
       <Features />
       <HowItWorks />
@@ -44,52 +45,6 @@ function AppStoreBadge({ className }: { className?: string }) {
         className="h-12 w-auto"
       />
     </a>
-  );
-}
-
-function SiteHeader() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <a href="#" className="flex items-center gap-2 font-semibold tracking-tight">
-          <div className="relative size-8 overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm">
-            <Image
-              src="/brand/app-icon.png"
-              alt="Veura"
-              fill
-              className="object-cover"
-              sizes="32px"
-              priority
-            />
-          </div>
-          <span>{APP_NAME}</span>
-        </a>
-
-        <nav className="hidden items-center gap-1 md:flex">
-          <Button asChild variant="ghost">
-            <a href="#features">Features</a>
-          </Button>
-          <Button asChild variant="ghost">
-            <a href="#how">How it works</a>
-          </Button>
-          <Button asChild variant="ghost">
-            <a href="#faq">FAQ</a>
-          </Button>
-        </nav>
-
-        {/* sticky CTA */}
-        <div className="flex items-center gap-2">
-          <div className="hidden sm:block">
-            <AppStoreBadge />
-          </div>
-          <Button asChild className="sm:hidden">
-            <a href="#download">
-              Get <ArrowRight className="ml-2 size-4" />
-            </a>
-          </Button>
-        </div>
-      </div>
-    </header>
   );
 }
 
@@ -438,34 +393,6 @@ function FinalCTA() {
   );
 }
 
-function SiteFooter() {
-  return (
-    <footer className="border-t border-black/10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-        <div>
-          <span className="font-medium text-foreground">{APP_NAME}</span> — Privacy-first, on-device transcription.
-        </div>
-        <div className="flex gap-4">
-          <a className="hover:text-foreground" href="#features">
-            Features
-          </a>
-          <a className="hover:text-foreground" href="#how">
-            How it works
-          </a>
-          <a className="hover:text-foreground" href="#faq">
-            FAQ
-          </a>
-          <a className="hover:text-foreground" href="#download">
-            Download
-          </a>
-          <a className="hover:text-foreground" href="/privacy">
-            Privacy
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 function SectionTitle({ title, body }: { title: string; body: string }) {
   return (
